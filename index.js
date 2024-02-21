@@ -1,26 +1,20 @@
 // Code your solution in this file!
-function distanceFromHqInBlocks (someValue) {
+const addressStreet = 42;
+function distanceFromHqInBlocks (pickupLocation) {
    
-    if (someValue<42){
-      return(42-someValue);
-    }
-    else {
-  
-    return(someValue-42);
-  }
+    return Math.abs(pickupLocation - addressStreet)
   }
 
-  function distanceFromHqInFeet (someValue) {
-    return distanceFromHqInBlocks(someValue)*264;
-   
+  function distanceFromHqInFeet (pickupLocation) {
+   let distanceInBlocks = distanceFromHqInBlocks(pickupLocation)
+   let distanceInFeet = distanceInBlocks * 264
+   return distanceInFeet
   }
   
-  function distanceTravelledInFeet(a,b){
-    if (b>a){
-      return((b-a)*264);
-    }
-    else
-      return((a-b)*264);
+  function distanceTravelledInFeet(startBlock, destinationBlock){
+   let blocks = Math.abs(startBlock - destinationBlock)
+   let blocksInFeet = blocks * 264
+   return blocksInFeet
   }
 
   function calculatesFarePrice(start,destination){
